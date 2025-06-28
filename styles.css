@@ -1,0 +1,580 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #f8f9fa;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.social-media {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  margin-right: 15px;
+  text-decoration: none;
+  color: #4e1919;
+  font-size: 20px; /* Adjust size as needed */
+}
+
+.icon:hover {
+  color: #0056b3; /* Darker shade on hover */
+}
+
+.phone {
+  margin-left: auto; /* Pushes the phone number to the right */
+}
+.main-header {
+  background-color: #4e1919;
+  color: #f7efef; /* White text color */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+}
+
+.logo img {
+  width: 130px;
+  height: auto;
+}
+
+nav {
+  width: 100%; /* Full width for the nav */
+  text-align: right; /* Center the nav items */
+  margin-left: 35%;
+}
+
+.menu-toggle {
+  display: none; /* Hidden by default */
+  flex-direction: column;
+  cursor: pointer;
+  margin: 10px 0; /* Space above the menu toggle */
+  margin-left: 50%;
+}
+
+.line1,
+.line2,
+.line3 {
+  width: 30px;
+  height: 3px;
+  background-color: #f2f2f2;
+  margin: 5px 0;
+}
+
+.nav-list {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: center; /* Center nav items */
+}
+.nav-list a {
+  color: #f3e6e6;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.nav-list a:hover {
+  color: rgb(12, 29, 12);
+}
+
+.nav-list li {
+  margin: 0 18px; /* Space between nav items */
+  position: relative; /* For submenu positioning */
+}
+
+.submenu {
+  display: none; /* Hide submenu by default */
+  position: absolute; /* Position it under the parent */
+  left: 0;
+  top: 100%; /* Position below the parent */
+  background-color: rgb(27, 27, 22); /* Background for submenu */
+  box-shadow: 0 2px 5px rgba(233, 229, 229, 0.2); /* Shadow for submenu */
+  color: #4e1919;
+  flex-wrap: nowrap;
+}
+.submenu li {
+  display: inline-block;
+  margin-right: 10px;
+}
+.nav-list li:hover .submenu {
+  display: block; /* Show submenu on hover */
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex; /* Show the menu toggle on mobile */
+  }
+
+  .nav-list {
+    display: none; /* Hide the nav list by default on mobile */
+    flex-direction: column; /* Stack items vertically */
+    width: 100%; /* Full width for mobile */
+  }
+
+  .nav-list.active {
+    display: flex; /* Show the nav list when active */
+  }
+}
+
+.hero {
+  position: relative;
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  overflow: hidden; /* Hide overflow */
+  color: white; /* Text color */
+  text-align: center; /* Center text */
+}
+
+.slideshow-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.mySlides {
+  display: none; /* Hide all slides by default */
+  position: relative; /* Position relative for gradient overlay */
+}
+
+.mySlides img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Cover the entire container */
+}
+
+.gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0.8)
+  ); /* Gradient overlay */
+  z-index: 1; /* Ensure overlay is above the image */
+}
+
+.text-container {
+  position: relative; /* To position text above slides */
+  z-index: 2; /* Ensure text is above the gradient */
+  padding: 20px; /* Add padding for mobile */
+}
+
+.donate-button {
+  background-color: #4e1919; /* Button color */
+  color: white; /* Button text color */
+  border: none;
+  padding: 10px 20px; /* Default padding */
+  font-size: 16px; /* Default font size */
+  cursor: pointer;
+  border-radius: 5px; /* Rounded corners */
+  max-width: 200px; /* Set a max width for larger screens */
+  width: auto; /* Allow auto width */
+  margin: 0 auto; /* Center the button */
+  transition: background-color 0.3s;
+}
+
+.donate-button:hover {
+  background-color: #97b416; /* Darker shade on hover */
+}
+
+/* Submenu Styles */
+.submenu {
+  position: relative; /* Ensure it positions correctly */
+  z-index: 3; /* Higher than the slideshow */
+  background-color: #4e1919;
+  padding: 10px; /* Add padding */
+}
+.nav-item {
+  color: white; /* Text color */
+  text-align: center; /* Center text */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  transition: color 0.3s; /* Smooth color transition */
+}
+
+.nav-item:hover {
+  color: #ffcc00; /* Change text color on hover */
+}
+
+.nav-item i {
+  display: block; /* Display icon as a block */
+  font-size: 24px; /* Icon size */
+  margin-bottom: 5px; /* Space between icon and text */
+}
+
+/* Slideshow Animation */
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade {
+  animation: fade 1.5s; /* Fade-in effect */
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+  .donate-button {
+    width: 90%;
+    padding: 10px;
+    font-size: 14px;
+    max-width: none;
+  }
+  .hero {
+    height: auto; /* Allow height to adjust based on content */
+    padding: 20px; /* Add padding */
+  }
+
+  .text-container {
+    padding: 10px; /* Less padding on mobile */
+  }
+
+  h1 {
+    font-size: 24px; /* Smaller font size for mobile */
+  }
+
+  h2 {
+    font-size: 20px; /* Smaller font size for mobile */
+  }
+
+  p {
+    font-size: 16px; /* Smaller font size for mobile */
+  }
+}
+.supporters-section {
+  display: flex; /* Use flexbox for layout */
+  justify-content: space-between; /* Space between quote and stats */
+  align-items: center; /* Center items vertically */
+  padding: 20px; /* Add padding */
+  background-color: #f9f9f9; /* Background color */
+}
+
+.quote-container {
+  flex: 1; /* Take up 1 part of the space */
+}
+
+.stats-container {
+  flex: 1; /* Take up 1 part of the space */
+  display: flex;
+  flex-direction: column; /* Stack stats vertically */
+  align-items: flex-end; /* Align stats to the right */
+}
+
+.stats-box {
+  background-color: #4e1919; /* Brown background */
+  color: white; /* Text color */
+  padding: 10px; /* Padding inside the box */
+  border-radius: 5px; /* Rounded corners */
+  margin-bottom: 10px; /* Space between boxes */
+  text-align: right; /* Align text to the right */
+  width: 100%; /* Full width */
+}
+
+.stats-box h3 {
+  margin: 0; /* Remove default margin */
+  font-size: 24px; /* Font size for numbers */
+}
+
+.stats-box p {
+  margin: 0; /* Remove default margin */
+  font-size: 16px; /* Font size for descriptions */
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+  .supporters-section {
+    flex-direction: column; /* Stack elements vertically on mobile */
+    align-items: center; /* Center items */
+  }
+
+  .stats-container {
+    flex-direction: row; /* Display stats horizontally on mobile */
+    justify-content: center; /* Center stats horizontally */
+    width: 100%; /* Full width */
+  }
+
+  .stats-box {
+    margin: 0 10px; /* Space between boxes */
+    flex: 1; /* Allow boxes to grow equally */
+    max-width: 150px; /* Limit max width for each box */
+  }
+}
+.container {
+  padding: 20px;
+}
+
+.sidebar {
+  margin-bottom: 20px;
+}
+
+.waqf-box {
+  border: 1px solid #ccc;
+  padding: 10px 15px; /* Adjusted padding */
+  border-radius: 5px;
+  background-color: #4e1919;
+  display: inline-block; /* Makes the box fit the content */
+  margin-bottom: 20px;
+}
+.model-title {
+  font-size: 50px; /* Bigger font size */
+  margin: 0; /* Remove default margin */
+}
+
+.model-title .our {
+  color: black; /* Black color for "Our" */
+}
+
+.model-title .model {
+  color: #4e1919; /* Brown color for "Model" */
+  font-style: italic;
+}
+.image-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.image-box {
+  text-align: center;
+  flex: 1 1 30%;
+  margin: 10px;
+}
+
+.image-box img {
+  width: 200px;
+  height: auto;
+}
+.com {
+  color: #4e1919;
+  font-style: italic;
+  font-size: 35px;
+}
+.tran {
+  font-size: 30px;
+}
+.bold {
+  font-size: 30px;
+  color: #4e1919;
+}
+a {
+  text-decoration: none;
+  color: rgb(225, 225, 235);
+}
+.about {
+  background-image: url(page.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+@media (max-width: 768px) {
+  .about {
+    height: auto; /* Allows height to adjust based on content */
+  }
+
+  h1 {
+    font-size: 24px; /* Adjusts title font size */
+  }
+
+  p {
+    font-size: 16px; /* Adjusts paragraph font size */
+  }
+}
+.tiku {
+  border: 1px solid #ccc;
+  padding: 10px 15px; /* Adjusted padding */
+  border-radius: 5px;
+  background-color: #4e1919;
+  display: inline-block; /* Makes the box fit the content */
+  margin-bottom: 20px;
+}
+.ran {
+  font-size: 25px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+.gf {
+  font-style: italic;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.text {
+  font-size: 15px;
+}
+@media (max-width: 768px) {
+  .image-container {
+    flex-direction: column; /* Stack vertically on mobile */
+    align-items: center; /* Center align */
+  }
+
+  .image-box {
+    flex: 1 1 100%; /* Full width on mobile */
+  }
+}
+.whats-happening {
+  padding: 20px;
+  text-align: center; /* Center the text */
+  background-color: rgba(255, 255, 255, 0.9); /* Background for the section */
+  margin: 20px 0; /* Margin around the section */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  color: #4e1919;
+}
+.black {
+  color: black;
+}
+.whats-happening h2 {
+  margin-bottom: 20px; /* Space below the title */
+}
+
+.carousel {
+  display: flex; /* Flexbox for horizontal layout */
+  overflow: hidden; /* Hide overflow for scrolling effect */
+  position: relative; /* Position for arrows */
+}
+
+.carousel-items {
+  display: flex; /* Flexbox for items */
+  transition: transform 0.5s ease; /* Smooth transition */
+}
+
+.carousel-item {
+  min-width: 300px; /* Minimum width for each item */
+  margin: 0 10px; /* Space between items */
+  background-color: #eaeaea; /* Background for items */
+  padding: 20px; /* Padding inside items */
+  border-radius: 5px; /* Rounded corners */
+  text-align: left; /* Align text to the left */
+}
+
+.arrow {
+  position: absolute; /* Position arrows */
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%); /* Adjust for centering */
+  background-color: rgba(255, 255, 255, 0.8); /* Background for arrows */
+  border: none; /* No border */
+  border-radius: 50%; /* Circular buttons */
+  padding: 10px; /* Padding for buttons */
+  cursor: pointer; /* Pointer cursor */
+  z-index: 100; /* Ensure arrows are above items */
+}
+
+.arrow-left {
+  left: 10px; /* Position left arrow */
+}
+
+.arrow-right {
+  right: 10px; /* Position right arrow */
+}
+.logo-section {
+  display: flex; /* Flexbox for logo and text */
+  align-items: center; /* Center items vertically */
+  padding: 20px; /* Padding for the section */
+  background-color: rgba(255, 255, 255, 0.9); /* Background for the section */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  margin: 20px 0; /* Margin around the section */
+}
+.color {
+  color: #4e1919;
+}
+.logo-section img {
+  width: 150px; /* Logo size */
+  margin-right: 20px; /* Space between logo and text */
+}
+
+.community-description {
+  margin-top: 10px; /* Space above the description */
+  text-align: left; /* Align text to the left */
+}
+.combined-info-section {
+  padding: 20px; /* Padding for the section */
+  background-color: rgba(255, 255, 255, 0.9); /* Background for the section */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(73, 4, 4, 0.1); /* Subtle shadow */
+  margin: 20px 0; /* Margin around the section */
+  color: #4e1919;
+  text-align: center;
+}
+
+.combined-info-section h2 {
+  margin-bottom: 15px; /* Space below the title */
+}
+.info-column {
+  color: #4e1919;
+}
+
+.info-list {
+  list-style-type: disc; /* Bullet points for lists */
+  padding-left: 20px; /* Indent for list items */
+}
+
+.info-list li {
+  margin-bottom: 10px; /* Space between list items */
+}
+
+.info-list a {
+  text-decoration: none; /* Remove underline from links */
+  color: #2b2c2e; /* Link color */
+}
+
+.info-list a:hover {
+  text-decoration: none; /* Underline on hover */
+}
+
+.flex-container {
+  display: flex; /* Flexbox for layout */
+  justify-content: space-between; /* Space between sections */
+}
+
+.info-column {
+  flex: 1; /* Equal width for columns */
+  margin-right: 20px; /* Space between columns */
+}
+
+.info-column:last-child {
+  margin-right: 0; /* Remove right margin for last column */
+}
+.footer {
+  background-color: #4e1919; /* Dark background color */
+  color: white; /* Text color */
+  padding: 20px; /* Padding for the footer */
+  text-align: center; /* Center align text */
+  margin-top: 20px; /* Margin above the footer */
+}
+
+.footer h3 {
+  margin-bottom: 10px; /* Space below the heading */
+}
+
+.footer a {
+  color: #ffcc00; /* Link color */
+  text-decoration: none; /* Remove underline from links */
+}
+
+.footer a:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+.social-links {
+  margin: 10px 0; /* Margin for social links */
+}
+
+.social-links a {
+  margin: 0 10px; /* Space between social icons */
+  font-size: 20px; /* Icon size */
+}
