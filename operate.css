@@ -1,0 +1,361 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #4e1919;
+  color: #f7efef; /* White text color */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  z-index: 1000;
+}
+
+.logo img {
+  width: 130px;
+  height: auto;
+}
+
+nav {
+  width: 100%; /* Full width for the nav */
+  text-align: right; /* Center the nav items */
+  margin-left: 35%;
+}
+
+.menu-toggle {
+  display: none; /* Hidden by default */
+  flex-direction: column;
+  cursor: pointer;
+  margin: 10px 0; /* Space above the menu toggle */
+  margin-left: 50%;
+}
+
+.line1,
+.line2,
+.line3 {
+  width: 30px;
+  height: 3px;
+  background-color: #f2f2f2;
+  margin: 5px 0;
+}
+
+.nav-list {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: center; /* Center nav items */
+}
+.nav-list a {
+  color: #f3e6e6;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.nav-list a:hover {
+  color: rgb(12, 29, 12);
+}
+
+.nav-list li {
+  margin: 0 18px; /* Space between nav items */
+  position: relative; /* For submenu positioning */
+}
+
+.submenu {
+  display: none; /* Hide submenu by default */
+  position: absolute; /* Position it under the parent */
+  left: 0;
+  top: 100%; /* Position below the parent */
+  background-color: rgb(27, 27, 22); /* Background for submenu */
+  box-shadow: 0 2px 5px rgba(233, 229, 229, 0.2); /* Shadow for submenu */
+  color: #4e1919;
+}
+
+.nav-list li:hover .submenu {
+  display: block; /* Show submenu on hover */
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex; /* Show the menu toggle on mobile */
+  }
+
+  .nav-list {
+    display: none; /* Hide the nav list by default on mobile */
+    flex-direction: column; /* Stack items vertically */
+    width: 100%; /* Full width for mobile */
+    background-color: #4e1919;
+  }
+
+  .nav-list.active {
+    display: flex; /* Show the nav list when active */
+  }
+  .submenu {
+    position: static; /* Change to static for mobile */
+    box-shadow: none; /* Remove shadow for mobile */
+    border: none; /* Remove border for mobile */
+  }
+}
+.nav-item {
+  color: white; /* Text color */
+  text-align: center; /* Center text */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  transition: color 0.3s; /* Smooth color transition */
+}
+
+.nav-item:hover {
+  color: #ffcc00; /* Change text color on hover */
+}
+
+.nav-item i {
+  display: block; /* Display icon as a block */
+  font-size: 24px; /* Icon size */
+  margin-bottom: 5px; /* Space between icon and text */
+}
+
+.hero {
+  height: 600px;
+  width: 100%;
+  margin-bottom: 5px;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8)),
+    url("waqf4.jpg");
+  /* background: rgba(0, 0, 0, 0.9) url("20241014_114323.jpg"); */
+  background-size: cover;
+  background-position: center;
+}
+.official {
+  font-size: 40px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: #f1f153;
+  text-align: center;
+  padding-top: 15%;
+  padding-bottom: 2%;
+}
+.like {
+  font-size: 20px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 24px;
+}
+@media (max-width: 768px) {
+  .official {
+    font-size: 25px;
+    padding: 30% 30px 5%;
+  }
+  .like {
+    padding: 20px 30px;
+  }
+}
+p {
+  font-size: 50px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: #4e1919;
+  font-style: italic;
+  padding: 5px;
+  margin-top: 0;
+}
+h3 {
+  font-size: 40px;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  padding: 5px;
+  margin-bottom: 0;
+}
+@media (max-width: 768px) {
+  p {
+    font-size: 30px; /* Smaller font size on mobile */
+  }
+}
+.container {
+  display: flex; /* Use Flexbox for layout */
+  flex-direction: row; /* Stack items vertically by default */
+  justify-content: space-between;
+  gap: 10px; /* Space between items */
+  padding: 10px;
+  flex-wrap: wrap;
+}
+
+.item {
+  background-color: #4e1919; /* Background color */
+  color: white; /* Text color */
+  padding: 15px; /* Padding inside each container */
+  width: 100%; /* Full width on desktop */
+  max-width: 600px; /* Maximum width for each container */
+  text-align: center; /* Center text */
+  border-radius: 8px; /* Rounded corners */
+}
+
+.log {
+  margin-top: 25px;
+  width: 100px; /* Set logo width */
+  height: auto; /* Maintain aspect ratio */
+}
+.clas {
+  margin: 15px 5px;
+  font-size: 25px;
+  font-weight: bold;
+  font-style: italic;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+.try {
+  font-size: 18px;
+  font-family: "Times New Roman", Times, serif;
+  color: white;
+  font-style: normal;
+}
+.contain {
+  background-color: #f3e6e6;
+}
+.lets {
+  font-size: 35px;
+  font-style: italic;
+  font-weight: bolder;
+  padding: 10px;
+}
+.yo {
+  font-size: 25px;
+  font-weight: bold;
+  padding: 10px;
+}
+.sum {
+  font-size: 20px;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Change to horizontal layout on mobile */
+    align-items: center;
+  }
+
+  .item {
+    width: auto; /* Allow width to adjust based on content */
+    flex: 1; /* Allow items to grow equally */
+    min-width: 200px;
+  }
+}
+ol li {
+  list-style: disc;
+  font-size: 18px;
+}
+.logo-section {
+  display: flex; /* Flexbox for logo and text */
+  align-items: center; /* Center items vertically */
+  padding: 20px; /* Padding for the section */
+  background-color: rgba(255, 255, 255, 0.9); /* Background for the section */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  margin: 20px 0; /* Margin around the section */
+}
+.color {
+  color: #4e1919;
+  margin-bottom: 0;
+}
+.foot {
+  font-size: 15px;
+  font-style: normal;
+  margin-top: 10px;
+}
+.logo-section img {
+  width: 150px; /* Logo size */
+  margin-right: 20px; /* Space between logo and text */
+}
+
+.community-description {
+  margin-top: 10px; /* Space above the description */
+  text-align: left; /* Align text to the left */
+}
+.combined-info-section {
+  padding: 20px; /* Padding for the section */
+  background-color: rgba(255, 255, 255, 0.9); /* Background for the section */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(73, 4, 4, 0.1); /* Subtle shadow */
+  margin: 20px 0; /* Margin around the section */
+  color: #4e1919;
+  text-align: center;
+}
+
+.combined-info-section h2 {
+  margin-bottom: 15px; /* Space below the title */
+}
+.info-column {
+  color: #4e1919;
+}
+
+.info-list {
+  list-style-type: disc; /* Bullet points for lists */
+  padding-left: 10px; /* Indent for list items */
+}
+
+.info-list li {
+  margin-bottom: 10px; /* Space between list items */
+}
+
+.info-list a {
+  text-decoration: none; /* Remove underline from links */
+  color: #2b2c2e; /* Link color */
+}
+
+.info-list a:hover {
+  text-decoration: none; /* Underline on hover */
+}
+
+.flex-container {
+  display: flex; /* Flexbox for layout */
+  justify-content: space-between; /* Space between sections */
+}
+
+.info-column {
+  flex: 1; /* Equal width for columns */
+  margin-right: 20px; /* Space between columns */
+}
+
+.info-column:last-child {
+  margin-right: 0; /* Remove right margin for last column */
+}
+.footer {
+  background-color: #4e1919; /* Dark background color */
+  color: white; /* Text color */
+  padding: 20px; /* Padding for the footer */
+  text-align: center; /* Center align text */
+  margin-top: 20px; /* Margin above the footer */
+}
+.fot {
+  color: white;
+  font-size: 15px;
+  font-style: normal;
+}
+.fr {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.footer a {
+  color: #ffcc00; /* Link color */
+  text-decoration: none; /* Remove underline from links */
+  font-size: 15px;
+  font-style: normal;
+}
+
+.footer a:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+.social-links {
+  margin: 10px 0; /* Margin for social links */
+}
+
+.social-links a {
+  margin: 0 10px; /* Space between social icons */
+  font-size: 20px; /* Icon size */
+}
+a {
+  text-decoration: none;
+  color: white;
+}
